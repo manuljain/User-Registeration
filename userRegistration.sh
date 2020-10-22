@@ -23,3 +23,21 @@ do
 
     fi
 done
+
+
+# Condition for checking last name is valid or not
+reg="[[:upper:]]{1}[a-zA-Z]{2,17}$"
+while true
+do
+    # Input last name
+    read -p "Enter last name : " lastname
+    if [[ $lastname =~ $reg ]]
+    then
+        echo "valid last name"
+        break
+    else
+        echo "invalid last name"
+        echo "HINT: The last letter should be uppercase and minimum length should be of 3 characters"
+
+    fi
+done
