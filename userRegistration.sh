@@ -75,3 +75,15 @@ do
         echo "invalid mobile number"
     fi
 done
+
+# Condition for checking password is valid or not
+# RULE 1: Minimum 8 characters
+read -p "enter a valid password : " passwd
+count=`echo ${#passwd}`
+if [[ $count -lt 8 ]]
+then
+    echo "Password length should be 8 character"
+    exit 1
+else
+    echo "Password is valid"
+fi
