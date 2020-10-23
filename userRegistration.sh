@@ -58,3 +58,20 @@ do
         echo "invalid email id"
     fi
 done
+
+
+# Condition for checking mobile number is valid or not
+
+regex_mob="[0-9]{2,5}[[:space:]][0-9]{10}$"
+
+while true
+do
+    read -p "enter a valid mobile number with country code : " mobilenum
+    if [[ $mobilenum =~ $regex_mob ]]
+    then
+        echo "valid mobile number"
+        break
+    else
+        echo "invalid mobile number"
+    fi
+done
