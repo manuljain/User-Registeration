@@ -78,12 +78,25 @@ done
 
 # Condition for checking password is valid or not
 # RULE 1: Minimum 8 characters
+# RULE 2: Should have atleast 1 uppercase character
+
 read -p "enter a valid password : " passwd
 count=`echo ${#passwd}`
 if [[ $count -lt 8 ]]
 then
     echo "Password length should be 8 character"
     exit 1
+
+fi
+
+#checking uppercase character in password
+
+echo $passwd | grep "[A-Z]"
+
+if [[ $? -ne 0 ]]
+then 
+    echo "Password must contain 1 uppercase character"
+    exit 2
 else
     echo "Password is valid"
 fi
