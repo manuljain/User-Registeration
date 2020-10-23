@@ -41,3 +41,20 @@ do
 
     fi
 done
+
+# Condition for checking email address is valid or not
+
+
+regex_Em="[[:lower:]]+.[[:lower:]]+@[[:lower:]]+\.[[:lower:]]+.[[:lower:]]"
+
+while true
+do
+    read -p "enter a valid email address : " emailid
+    if [[ $emailid =~ $regex_Em ]]
+    then
+        echo "valid email id"
+        break
+    else
+        echo "invalid email id"
+    fi
+done
