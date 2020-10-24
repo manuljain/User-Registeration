@@ -80,6 +80,7 @@ done
 # Condition for checking password is valid or not
 # RULE 1: Minimum 8 characters
 # RULE 2: Should have atleast 1 uppercase character
+# RULE 3: Should have atleast 1 numeric number
 
 read -p "enter a valid password : " passwd
 count=`echo ${#passwd}`
@@ -90,9 +91,9 @@ then
 
 fi
 
-#checking uppercase character in password
+#checking uppercase character and numeric numberr in password
 
-echo $passwd | grep "[A-Z]"
+echo $passwd | grep "[A-Z]" | grep "[0-9]"
 
 if [[ $? -ne 0 ]]
 then 
