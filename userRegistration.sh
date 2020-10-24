@@ -80,6 +80,8 @@ done
 # RULE 1: Minimum 8 characters
 # RULE 2: Should have atleast 1 uppercase character
 # RULE 3: Should have atleast 1 numeric number
+# RULE 4: Should have atleast 1 special character
+
 
 read -p "enter a valid password : " passwd
 count=`echo ${#passwd}`
@@ -90,13 +92,13 @@ then
 
 fi
 
-#checking uppercase character and numeric numberr in password
+#checking uppercase character, numeric number and special character in password
 
-echo $passwd | grep "[A-Z]" | grep "[0-9]"
+echo $passwd | grep "[A-Z]" | grep "[0-9]" | grep "[@#$%^&*]"
 
 if [[ $? -ne 0 ]]
 then 
-    echo "Password must contain 1 uppercase character"
+    echo "Password must contain 1 uppercase character,numeric number and special character"
     exit 2
 else
     echo "Password is valid"
