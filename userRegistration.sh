@@ -42,20 +42,20 @@ do
     fi
 done
 
-# Condition for checking email address is valid or not
+# Condition for checking sample email is valid or not
 
 
-regex_Em="[[:lower:]]+.[[:lower:]]+@[[:lower:]]+\.[[:lower:]]+.[[:lower:]]"
+read -p "Enter Email-Id : " email
+regex_Email="^[a-z0-9!#\$%&'*+/=?^_\`{|}~-]+(\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]([a-z0-9-]*[a-z0-9])?\$"
 
 while true
 do
-    read -p "enter a valid email address : " emailid
-    if [[ $emailid =~ $regex_Em ]]
-    then
-        echo "valid email id"
-        break
+    #Checking Email ID is vaid or not
+    if [[ $email =~ $regex_Email ]]; then
+            echo "Valid Email-ID"
+            break
     else
-        echo "invalid email id"
+            echo "Wrong Email Id !!!"
     fi
 done
 
